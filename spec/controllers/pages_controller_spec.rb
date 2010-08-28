@@ -54,5 +54,4 @@ describe PagesController do
       response.should have_selector("title", :content => @base_title + " Help")
     end
   end
-
 end
