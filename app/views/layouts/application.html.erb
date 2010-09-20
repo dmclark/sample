@@ -8,14 +8,12 @@
   <body>
     <div class="container">
       <%= render :partial => 'layouts/header' %>
-			<section class="round">
-				<% flash.each do |key, value|%>
-					<div class="flash <%= key %>"><%= value %></div>
-				<% end %>
-			</section>
-      <section class="round">
+			<div id="content" class="round">
+        <% flash.each do |key, value| %>
+          <%= content_tag(:div, value, :class => "flash #{key}") %>
+        <% end %> 
         <%= yield %>
-      </section>
+      </div>
 			<%= render :partial => 'layouts/footer' %>
 			<%= debug(params) if Rails.env.development? %>
     </div>
