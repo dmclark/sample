@@ -10,3 +10,4 @@ doc/app
 *~
 .DS_Store
 Gemfile.lock
+.rvmrc
