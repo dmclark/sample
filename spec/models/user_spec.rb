@@ -99,12 +99,12 @@ describe User do
       @user.encrypted_password.should_not be_blank
     end
     
-    it "should set a salt" do
-      @user.salt.should_not be_blank
-    end
-    
     it "should have a salt" do
       @user.should respond_to(:salt)
+    end
+    
+    it "should set a salt" do
+      @user.salt.should_not be_blank
     end
     
     describe "has_password? method" do
