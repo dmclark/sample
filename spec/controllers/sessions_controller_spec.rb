@@ -39,7 +39,7 @@ describe SessionsController do
       end
     end
     
-    describe "with valid email and password" do
+    describe "success" do
       
       before(:each) do
         @user = Factory(:user)
@@ -49,7 +49,7 @@ describe SessionsController do
       it "should sign in the user" do
         post :create, :session => @attr
         controller.current_user.should == @user
-        controller.should be_signed_in
+        controller.should be_signed_in 
       end
       
       it "should redirect to user show page" do
