@@ -48,6 +48,11 @@ class User < ActiveRecord::Base
     end
   end
   
+  def feed
+    # stub
+    Micropost.where("user_id = ?", id)
+  end
+    
   private
 
     def encrypt_password
